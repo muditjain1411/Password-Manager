@@ -12,8 +12,8 @@ const PasswordListRow = (props) => {
 
       </div>
       <div className="flex gap-2 w-1/4 justify-end">
-        <button className="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 transition">Edit</button>
-        <button className="px-3 py-1 rounded-lg bg-red-600 text-white text-xs font-semibold hover:bg-red-700 transition">Delete</button>
+        <button onClick={() => props.onEdit(props.id)} className="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-700 transition">Edit</button>
+        <button onClick={() => props.onDelete(props.id)} className="px-3 py-1 rounded-lg bg-red-600 text-white text-xs font-semibold hover:bg-red-700 transition">Delete</button>
       </div>
     </div>
   );
