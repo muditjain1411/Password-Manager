@@ -10,7 +10,11 @@ const Navbar = ({ setShowModal }) => {
                     <div className="text-3xl font-extrabold font-[cursive] tracking-wide text-white drop-shadow-lg select-none">PASSVAULT</div>
                 </div>
                 <div className='flex flex-row items-center gap-4 p-2'>
-                    <button onClick={() => setShowModal(true)} className='bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer' type="button">Add Password</button>
+                    <button onClick={() => setShowModal(true)} className='bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer flex items-center gap-2' type="button"><lord-icon
+                        src="https://cdn.lordicon.com/efxgwrkc.json"
+                        trigger="hover"
+                        className="w-[28px] h-[28px]">
+                    </lord-icon><span>Add Password</span></button>
                 </div>
             </div>
         </>

@@ -28,7 +28,7 @@ function App() {
   const addPassword = useCallback((newPassword) => {
     const passwordWithId = { ...newPassword, id: uuidv4() };
     setPasswords(prevPasswords => [...prevPasswords, passwordWithId]);
-    setShowModal(false); // Close modal on save
+    setShowModal(false);
   }, []);
 
   const handleEdit = useCallback((password) => {
@@ -46,7 +46,7 @@ function App() {
     setPasswords(prevPasswords => 
       prevPasswords.map(p => (p.id === editingPassword.id ? editingPassword : p))
     );
-    setEditingPassword(null); // Close modal on save
+    setEditingPassword(null);
   }, [editingPassword]);
 
   return (
@@ -60,19 +60,19 @@ function App() {
         closeModal={() => setEditingPassword(null)}
         handleModalSave={handleUpdatePassword} />
       <div className='bg-amber-50 min-h-screen flex flex-col items-center p-4 pt-20 m-auto'>
-        <div className='w-full max-w-4xl mt-4'>
+        <div className='w-full max-w-5xl mt-4'>
           <h1 className='text-2xl font-bold mt-8'>Your Passwords</h1>
           <div className="mt-8 w-full rounded-xl overflow-hidden shadow-lg bg-white/90">
             {/* Headings */}
-            <div className="flex items-center justify-evenly px-6 py-3 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white">
-              <span className="font-bold w-1/3">Site</span>
+            <div className="grid grid-cols-4 justify-items-center items-center px-6 py-3 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white">
+              <span className="font-bold">Site</span>
               <span className="font-bold">Username</span>
               <span className="font-bold">Password</span>
               <span className="font-bold">Actions</span>
             </div>
             
             {/* Password list*/}
-            {passwords.length === 0 && <div className='p-4 text-center'>No passwords to show.</div>}
+            {passwords.length === 0 && <div className='p-4 items-center'>No passwords to show.</div>}
             {passwords.map((item) => (
               <PasswordListRow
                 key={item.id}
